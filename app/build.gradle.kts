@@ -9,12 +9,12 @@ plugins {
 
 android {
     namespace = "com.sunildhiman90.geminifirebaseai"
-    compileSdk = 35
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.sunildhiman90.geminifirebaseai"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -66,6 +66,6 @@ dependencies {
 
     
     //Firebase bom and firebase ai
-    implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
-    implementation("com.google.firebase:firebase-ai")
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.ai)
 }
